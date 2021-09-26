@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bbi_lager_kommiauftragpos_view_list" model="ir.ui.view">
+        <field name="name">bbi.lager.kommiauftragpos.tree</field>
+        <field name="model">bbi.lager.kommiauftragpos</field>
+        <field name="arch" type="xml">
+            <tree string="Channel" editable="bottom">
+                <field name="kommiauftrag_id"/>
+                <field name="projekt"/>
+                <field name="projektbez"/>
+                <field name="scancode"/>
+                <field name="kubez1"/>
+                <field name="kubez2"/>
+                <field name="soll"/>
+                <field name="ist"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

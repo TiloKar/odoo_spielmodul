@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bbi_lager_kommiauftrag_open_list" model="ir.actions.act_window">
+        <field name="name">Liste der Kommiaufträge</field>
+        <field name="res_model">bbi.lager.kommiauftrag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="bbi_lager_kommiauftragpos_open_list" model="ir.actions.act_window">
+        <field name="name">Liste aller Kommiauftragspositionen</field>
+        <field name="res_model">bbi.lager.kommiauftragpos</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <record id="bbi_lager_artikel_open_list" model="ir.actions.act_window">
+        <field name="name">Liste Artikelstamm</field>
+        <field name="res_model">bbi.lager.artikel</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <data>
+        <menuitem id="bbi_lager_menu_root" name="Lager">
+            <menuitem id="bbi_lager_first_level_artikel" name="Artikel">
+                <menuitem id="bbi_lager_menu_action_artikel" action="bbi_lager_artikel_open_list"/>
+            </menuitem>
+            <menuitem id="bbi_lager_first_level_kommiauftrag" name="Kommiauftrag">
+                <menuitem id="bbi_lager_menu_action_kommiauftrag_1" action="bbi_lager_kommiauftrag_open_list"/>
+            </menuitem>
+            <menuitem id="bbi_lager_first_level_kommiauftragpos" name="Kommiauftragspositionen">
+                <menuitem id="bbi_lager_menu_action_kommiauftragpos_1" action="bbi_lager_kommiauftragpos_open_list"/>
+            </menuitem>
+        </menuitem>
+    </data>
+</odoo>

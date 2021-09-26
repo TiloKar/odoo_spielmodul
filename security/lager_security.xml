@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_lager_lagerist" model="res.groups">
+        <field name="name">Lagerist</field>
+        <field name="category_id" ref="base.module_category_manufacturing_lager"/>
+        <field name="comment">Die Typen die die Kommiaufträge in die Kisten sortieren</field>
+    </record>
+    <record id="group_lager_planer" model="res.groups">
+        <field name="name">Planer</field>
+        <field name="category_id" ref="base.module_category_manufacturing_lager"/>
+        <field name="comment">Die Typen die die Kommiaufträge erstellen und zur Kommissionierung beauftragen</field>
+    </record>
+</odoo>

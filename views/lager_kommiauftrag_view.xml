@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bbi_lager_kommiauftrag_view_list" model="ir.ui.view">
+        <field name="name">bbi.lager.kommiauftrag.tree</field>
+        <field name="model">bbi.lager.kommiauftrag</field>
+        <field name="arch" type="xml">
+            <!--<tree string="Channel" editable="bottom">-->
+            <tree>
+                <field name="projekt_id"/>
+                <button type="object" name="eine_methode" string="Aufruf einer Methode"/>
+                <field name="state"/>
+                <field name="montagesoll"/>
+                <field name="kubez1"/>
+                <field name="kubez2"/>
+                <field name="kommiauftragpos_ids"/>
+            </tree>
+        </field>
+    </record>
+    <record id="bbi_lager_kommiauftrag_edit_form" model="ir.ui.view">
+        <field name="name">bbi.lager.kommiauftrag.form</field>
+        <field name="model">bbi.lager.kommiauftrag</field>
+        <field name="arch" type="xml">
+            <form string="Kommiauftrag bearbeiten">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                    <button string="Freigabe für Beschaffung" type="object" name="action_kommiauftrag_changeState" states="1" />
+                    <button string="Freigabe für Kommisionierung" type="object" name="action_kommiauftrag_changeState" states="2" />
+                    <button string="Freigabe teilkommisioniert" type="object" name="action_kommiauftrag_changeState" states="3" />
+                    <button string="Freigabe vollständig kommissioniert" type="object" name="action_kommiauftrag_changeState" states="4" />
+                    <button string="Nachkommissionieren" type="object" name="action_kommiauftrag_changeState" states="5" />
+                </header>
+                <field name="projekt_id"/>
+                <separator/>
+                <field name="montagesoll" string="Montagesoll"/>
+                <notebook>
+                    <page string="Kopf">
+                        <tree>
+                            <field name="kubez1"/>
+                            <field name="kubez2"/>
+                        </tree>
+                    </page>
+                    <page string="Positionen">
+                        <!--<field name="kommiauftragpos_ids" options="{'create': False}">-->
+                        <field name="kommiauftragpos_ids" widget="one2many" context="{'default_ist' : 0 , 'default_soll' : 1}">
+                            <tree editable="bottom">
+                                <field name="kommiauftrag_id" invisible="1"/>
+                                <field name="ist"/>
+                                <field name="soll"/>
+                                <field name="artikel_id"/>
+                                <field name="kubez1"/>
+                                <field name="kubez1"/>
+                            </tree>
+                        </field>
+                        <button string="Aktion nicht verfügbar für vollständige Aufträge" class="oe_highlight"
+                            type="object" name="action_kommiauftrag_1"
+                            attrs="{'invisible': [('state','=','5')]}"/>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+</odoo>

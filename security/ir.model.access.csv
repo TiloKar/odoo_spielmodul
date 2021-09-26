@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bbi_lager_artikel,access_bbi_lager_artikel,model_bbi_lager_artikel,lager.group_lager_planer,1,1,1,1
+access_bbi_lager_kommiauftrag,access_bbi_lager_kommiauftrag,model_bbi_lager_kommiauftrag,lager.group_lager_planer,1,1,1,1
+access_bbi_lager_kommiauftragpos,access_bbi_lager_kommiauftragpos,model_bbi_lager_kommiauftragpos,lager.group_lager_planer,1,1,1,1
+access_bbi_lager_kommiauftrag,access_bbi_lager_kommiauftrag,model_bbi_lager_kommiauftrag,lager.group_lager_lagerist,1,0,0,0
+access_bbi_lager_kommiauftragpos,access_bbi_lager_kommiauftragpos,model_bbi_lager_kommiauftragpos,lager.group_lager_lagerist,1,0,0,0

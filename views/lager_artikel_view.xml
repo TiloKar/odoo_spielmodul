@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bbi_lager_artikel_view_list" model="ir.ui.view">
+        <field name="name">bbi.lager.artikel.tree</field>
+        <field name="model">bbi.lager.artikel</field>
+        <field name="arch" type="xml">
+            <tree string="Channel" editable="bottom">
+                <field name="scancode"/>
+                <field name="kubez1"/>
+                <field name="kubez2"/>
+                <field name="category"/>
+                <field name="kommiauftragpos_ids"/>
+            </tree>
+        </field>
+    </record>
+    <record id="bbi_lager_artikel_view_search" model="ir.ui.view">
+        <field name="name">bbi.lager.artikel.search</field>
+        <field name="model">bbi.lager.artikel</field>
+        <field name="arch" type="xml">
+            <search string="Artikel">
+                <field name="scancode"/>
+                <field name="kubez1"/>
+                <field name="kubez2"/>
+                <field name="category"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>
